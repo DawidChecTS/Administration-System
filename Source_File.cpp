@@ -4,11 +4,6 @@
 #include <string>
 using namespace std;
 
-/*Account::Account(string a, string b){
-    userName = a;
-    userPassword = b;
-}*/
-
 Staff::Staff(string n, int a, string e,
     string p, int m){
         n = name;
@@ -34,9 +29,17 @@ string Account::GetUserPassword(){
     return userPassword;
 }
 
-void Display::DisplayMenu(){
+void Display::DisplayLogInPage(){
      cout << "Welcome in the Administration System!" << '\n';
-     cout << "                                     " << '\n';
+     cout << "-------------------------------------" << '\n';
+}
+
+void Display::Menu(){
+    cout << "-------------------------------------" << '\n';
+    cout << "Choose following options:" << '\n';
+    cout << "1. Add Staff" << '\n';
+    cout << "2. List Staff" << '\n';
+    cout << "3. Exit" << '\n';
 }
 
 void Display::NameField(){

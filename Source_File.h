@@ -37,8 +37,9 @@ class Staff{
 
 class Display{
     public :
-    void DisplayMenu();
+    void DisplayLogInPage();
     void NameField();
+    void Menu();
     void PasswordField();
 };
 
