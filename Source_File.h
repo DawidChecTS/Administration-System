@@ -41,6 +41,8 @@ class Display{
     void NameField();
     void Menu();
     void PasswordField();
+    void AddStaffView();
+    void ListStaffView();
 };
 
 string printString(string a);

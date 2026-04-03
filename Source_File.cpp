@@ -50,4 +50,13 @@ void Display::PasswordField(){
     cout << "Password; " << '\n';
 }
 
+void Display::AddStaffView(){
+    cout << "Add Staff View" << '\n';
+    cout << "-------------------------------------" << '\n';
+}
+
+void Display::ListStaffView(){
+    cout << "List Staff View" << '\n';
+    cout << "-------------------------------------" << '\n';
+}
 

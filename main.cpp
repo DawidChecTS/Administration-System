@@ -23,15 +23,16 @@ int main(){
     cin >> password;
     account.SetUserPassword(password);
 
-    display.Menu();
-    cin >> userChoice;
-
     while (true){
+        display.Menu();
+        cin >> userChoice;
         if (userChoice == 1){
-
+            display.ListStaffView();
+            continue;;
         }
         else if (userChoice == 2){
-
+            display.AddStaffView();
+            continue;
         }
         else if (userChoice == 3){
             cout << "You are exiting the system!";
