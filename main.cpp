@@ -9,11 +9,17 @@ using namespace std;
 int main(){
     Display display;
     Account account;
-    vector <Staff> people;
+    vector <Staff> staff;
 
     string name;
     string password;
     int userChoice;
+    string staffName;
+    int staffAge;
+    string staffEmail;
+    string staffPosition;
+    int staffMonthlySalary;
+
 
     display.DisplayLogInPage();
     display.NameField();
@@ -28,7 +34,21 @@ int main(){
         cin >> userChoice;
         if (userChoice == 1){
             display.ListStaffView();
-            continue;;
+            cout << "Enter Staff's name: ";
+            cin >> staffName;
+            cout << "Enter Staff's age: ";
+            cin >> staffAge;
+            cout << "Enter Staff's email: ";
+            cin >> staffEmail;
+            cout << "Enter Staff's position: ";
+            cin >> staffPosition;
+            cout << "Enter Staff's  monthly salary: ";
+            cin >> staffMonthlySalary;
+
+            staff.push_back(Staff(staffName, staffAge, staffEmail,
+                staffPosition,staffMonthlySalary));
+
+            continue;
         }
         else if (userChoice == 2){
             display.AddStaffView();
@@ -44,7 +64,6 @@ int main(){
         }
     }
 
-    people.push_back(Staff("Dawid", 29, "checdd@gmail.com", "Boss", 31000));
 
     return 0;
 }
