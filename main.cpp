@@ -7,7 +7,7 @@ using namespace std;
 
 
 int main(){
-    Display display;
+    Graphics graphics;
     Account account;
     vector <Staff> staff;
 
@@ -21,19 +21,19 @@ int main(){
     int staffMonthlySalary;
 
 
-    display.DisplayLogInPage();
-    display.NameField();
+    graphics.DisplayLogInPage();
+    graphics.NameField();
     cin >> name;
     account.SetUserName(name);
-    display.PasswordField();
+    graphics.PasswordField();
     cin >> password;
     account.SetUserPassword(password);
 
     while (true){
-        display.Menu();
+        graphics.Menu();
         cin >> userChoice;
         if (userChoice == 1){
-            display.ListStaffView();
+            graphics.AddStaffView();
             cout << "Enter Staff's name: ";
             cin >> staffName;
             cout << "Enter Staff's age: ";
@@ -45,13 +45,16 @@ int main(){
             cout << "Enter Staff's  monthly salary: ";
             cin >> staffMonthlySalary;
 
-            staff.push_back(Staff(staffName, staffAge, staffEmail,
-                staffPosition,staffMonthlySalary));
+            staff.emplace_back(staffName, staffAge, staffEmail,
+                staffPosition,staffMonthlySalary);
 
             continue;
         }
         else if (userChoice == 2){
-            display.AddStaffView();
+            graphics.ListStaffView();
+            for (const Staff& s : staff){
+                s.PrintStaff();
+            }
             continue;
         }
         else if (userChoice == 3){

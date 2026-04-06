@@ -5,16 +5,20 @@
 using namespace std;
 
 Staff::Staff(string n, int a, string e,
-    string p, int m){
-        n = name;
-        a = age;
-        e = emali;
-        p = position;
-        m = monthlySalary;
+    string p, int m) : name(n), age(a), email(e),
+    position(p), monthlySalary(m) {}
+
+
+void Staff::PrintStaff () const {
+    cout << "Name: " << name << '\n';
+    cout << "Age: " << age << '\n';
+    cout << "email: " << email << '\n';
+    cout << "Position: " << position << '\n';
+    cout << "MonthlySalary: " << monthlySalary << '\n';
 }
 
 void Account::SetUserName(string a){
-    a = userName;
+    userName = a;
 }
 
 string Account::GetUserName(){
@@ -22,19 +26,19 @@ string Account::GetUserName(){
 }
 
 void Account::SetUserPassword(string a){
-    a = userPassword;
+    userPassword = a;
 }
 
 string Account::GetUserPassword(){
     return userPassword;
 }
 
-void Display::DisplayLogInPage(){
+void Graphics::DisplayLogInPage(){
      cout << "Welcome in the Administration System!" << '\n';
      cout << "-------------------------------------" << '\n';
 }
 
-void Display::Menu(){
+void Graphics::Menu(){
     cout << "-------------------------------------" << '\n';
     cout << "Choose following options:" << '\n';
     cout << "1. Add Staff" << '\n';
@@ -42,20 +46,20 @@ void Display::Menu(){
     cout << "3. Exit" << '\n';
 }
 
-void Display::NameField(){
+void Graphics::NameField(){
     cout << "Login: "<< '\n';
 }
 
-void Display::PasswordField(){
+void Graphics::PasswordField(){
     cout << "Password; " << '\n';
 }
 
-void Display::AddStaffView(){
+void Graphics::AddStaffView(){
     cout << "Add Staff View" << '\n';
     cout << "-------------------------------------" << '\n';
 }
 
-void Display::ListStaffView(){
+void Graphics::ListStaffView(){
     cout << "List Staff View" << '\n';
     cout << "-------------------------------------" << '\n';
 }

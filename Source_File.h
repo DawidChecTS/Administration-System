@@ -2,40 +2,40 @@
 #define SOURCE_FILE_H
 #include <vector>
 #include <string>
-using namespace std;
 
 
 class Account{
     private :
-    string userName;
-    string userPassword;
+    std::string userName;
+    std::string userPassword;
 
     public :
-    void SetUserName(string a);
-    string GetUserName();
-    void SetUserPassword(string a);
-    string GetUserPassword();
+    void SetUserName(std::string a);
+    std::string GetUserName();
+    void SetUserPassword(std::string a);
+    std::string GetUserPassword();
 
 };
 
 class Staff{
     private :
-    string name;
+    std::string name;
     int age;
-    string emali;
-    string position;  
+    std::string email;
+    std::string position;  
     int monthlySalary;
 
     public :
-    Staff(string n, int a, string e,
-    string p, int m);
+    Staff(std::string n, int a, std::string e,
+    std::string p, int m);
 
     void AddStaff();
     void ListStaff();
     void RemoveStaff();
+    void PrintStaff() const;
 };
 
-class Display{
+class Graphics{
     public :
     void DisplayLogInPage();
     void NameField();
@@ -44,9 +44,6 @@ class Display{
     void AddStaffView();
     void ListStaffView();
 };
-
-string printString(string a);
-int printInt(int a);
 
 
 #endif
