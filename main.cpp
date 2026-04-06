@@ -54,10 +54,14 @@ int main(){
             graphics.ListStaffView();
             for (const Staff& s : staff){
                 s.PrintStaff();
+                continue;
             }
-            continue;
         }
         else if (userChoice == 3){
+            graphics.RemoveStaffView();
+            continue;
+        }
+        else if (userChoice == 4){
             cout << "You are exiting the system!";
             return false;
         }

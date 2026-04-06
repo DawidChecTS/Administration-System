@@ -43,7 +43,8 @@ void Graphics::Menu(){
     cout << "Choose following options:" << '\n';
     cout << "1. Add Staff" << '\n';
     cout << "2. List Staff" << '\n';
-    cout << "3. Exit" << '\n';
+    cout << "3. Remove Staff" << '\n';
+    cout << "4. Exit" << '\n';
 }
 
 void Graphics::NameField(){
@@ -61,6 +62,11 @@ void Graphics::AddStaffView(){
 
 void Graphics::ListStaffView(){
     cout << "List Staff View" << '\n';
+    cout << "-------------------------------------" << '\n';
+}
+
+void Graphics::RemoveStaffView(){
+    cout << "Remove Staff View" << '\n';
     cout << "-------------------------------------" << '\n';
 }
 

@@ -43,6 +43,7 @@ class Graphics{
     void PasswordField();
     void AddStaffView();
     void ListStaffView();
+    void RemoveStaffView();
 };
 
 
