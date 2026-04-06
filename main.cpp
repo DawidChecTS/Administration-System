@@ -13,12 +13,13 @@ int main(){
 
     string name;
     string password;
-    int userChoice;
+    int userMenuChoice;
+    int userListStaffChoice;
     string staffName;
     int staffAge;
     string staffEmail;
-    string staffPosition;
     int staffMonthlySalary;
+    int positionChoice;
 
 
     graphics.DisplayLogInPage();
@@ -31,8 +32,8 @@ int main(){
 
     while (true){
         graphics.Menu();
-        cin >> userChoice;
-        if (userChoice == 1){
+        cin >> userMenuChoice;
+        if (userMenuChoice == 1){
             graphics.AddStaffView();
             cout << "Enter Staff's name: ";
             cin >> staffName;
@@ -40,28 +41,57 @@ int main(){
             cin >> staffAge;
             cout << "Enter Staff's email: ";
             cin >> staffEmail;
-            cout << "Enter Staff's position: ";
-            cin >> staffPosition;
+            graphics.ChoosePosition();
+            cin >> positionChoice;
+
+            Position pos;
+
+            switch (positionChoice){
+                case 1: pos = Position::Worker; break;
+                case 2: pos = Position::Superwisor; break;
+                case 3: pos = Position::Boss; break;
+            }
+
             cout << "Enter Staff's  monthly salary: ";
             cin >> staffMonthlySalary;
 
             staff.emplace_back(staffName, staffAge, staffEmail,
-                staffPosition,staffMonthlySalary);
+                pos,staffMonthlySalary);
 
             continue;
         }
-        else if (userChoice == 2){
+        else if (userMenuChoice == 2){
             graphics.ListStaffView();
-            for (const Staff& s : staff){
-                s.PrintStaff();
-                continue;
-            }
+            while (true){
+                graphics.ListStaffOptions();
+                cin >> userListStaffChoice;
+                if (userListStaffChoice == 1){
+                    // staff -> the vector
+                    // s -> is a temporary variable used in each loop iteration
+                    // for each element insisde of staff, call it 's'
+                    for (const Staff& s : staff){
+                    s.PrintStaff();
+                    continue;
+                    }
+                }
+                else if (userListStaffChoice == 2){
+                    staff[0].PrintStaff();
+                }
+                else if (userListStaffChoice == 3){
+
+                }
+                else{
+                cout << "Error! The option you choose was not lsited in the menu!";
+                return false;
         }
-        else if (userChoice == 3){
+            }
+            
+        }
+        else if (userMenuChoice == 3){
             graphics.RemoveStaffView();
             continue;
         }
-        else if (userChoice == 4){
+        else if (userMenuChoice == 4){
             cout << "You are exiting the system!";
             return false;
         }

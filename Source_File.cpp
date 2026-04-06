@@ -4,8 +4,19 @@
 #include <string>
 using namespace std;
 
+
+std::string PositionToString(Position p){
+    switch(p) {
+        case Position::Worker: return "Worker";
+        case Position::Superwisor: return "Superwisor";
+        case Position::Boss: return "Boss";
+        default: return "Unknown!";
+    }
+}
+
+
 Staff::Staff(string n, int a, string e,
-    string p, int m) : name(n), age(a), email(e),
+    Position p, int m) : name(n), age(a), email(e),
     position(p), monthlySalary(m) {}
 
 
@@ -13,7 +24,7 @@ void Staff::PrintStaff () const {
     cout << "Name: " << name << '\n';
     cout << "Age: " << age << '\n';
     cout << "email: " << email << '\n';
-    cout << "Position: " << position << '\n';
+    cout << "Position: " << PositionToString(position) << '\n';
     cout << "MonthlySalary: " << monthlySalary << '\n';
 }
 
@@ -70,3 +81,15 @@ void Graphics::RemoveStaffView(){
     cout << "-------------------------------------" << '\n';
 }
 
+void Graphics::ListStaffOptions(){
+    cout << "1. List all Staff." << '\n';
+    cout << "2. List specific Staff member." << '\n';
+    cout << "3. Go back." << '\n';
+}
+
+void Graphics::ChoosePosition(){
+    cout << "Choose the position" << '\n';
+    cout << "1.Worker" << '\n';
+    cout << "2.Superwisor" << '\n';
+    cout << "3.Boss" << '\n';
+}

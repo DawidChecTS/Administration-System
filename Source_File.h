@@ -17,17 +17,23 @@ class Account{
 
 };
 
+enum class Position{
+    Worker,
+    Superwisor,
+    Boss
+};
+
 class Staff{
     private :
     std::string name;
     int age;
     std::string email;
-    std::string position;  
+    Position position;  
     int monthlySalary;
 
     public :
     Staff(std::string n, int a, std::string e,
-    std::string p, int m);
+    Position p, int m);
 
     void AddStaff();
     void ListStaff();
@@ -44,7 +50,8 @@ class Graphics{
     void AddStaffView();
     void ListStaffView();
     void RemoveStaffView();
+    void ListStaffOptions();
+    void ChoosePosition();
 };
-
 
 #endif
