@@ -56,4 +56,5 @@ class Graphics{
 };
 
 bool isSallaryOK(int sallary, int age);
+bool canBeSupervisor(int age, Position p);
 #endif

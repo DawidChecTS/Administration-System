@@ -44,6 +44,7 @@ int main(){
             graphics.ChoosePosition();
             cin >> positionChoice;
 
+            
             Position pos;
 
             switch (positionChoice){
@@ -55,7 +56,7 @@ int main(){
             cout << "Enter Staff's monthly salary: ";
             cin >> staffMonthlySalary;
 
-            if (isSallaryOK(staffMonthlySalary, staffAge)) {
+            if (isSallaryOK(staffMonthlySalary, staffAge) && canBeSupervisor(staffAge, pos)) {
                 staff.emplace_back(staffName, staffAge, staffEmail,
                 pos, staffMonthlySalary);
             }      

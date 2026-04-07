@@ -15,7 +15,6 @@ std::string PositionToString(Position p){
     }
 }
 
-
 Staff::Staff(string n, int a, string e,
     Position p, int m) : name(n), age(a), email(e),
     position(p), monthlySalary(m) {}
@@ -99,6 +98,16 @@ bool isSallaryOK(int sallary, int age){
     if (sallary > 30000 && age < 30 ){
         cout << "Someone below 30 can't earn above 30 000kr!\n";
         return false;
+    }
+    else {
+        return true;
+    }
+}
+
+bool canBeSupervisor(int age, Position p){
+    if (age < 30 && p == Position::Superwisor){
+        cout << "People below age of 30 can't be assigned SUPERVISOR!\n";
+        return false; 
     }
     else {
         return true;
