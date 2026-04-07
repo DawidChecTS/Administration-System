@@ -4,6 +4,7 @@
 #include <string>
 
 
+
 class Account{
     private :
     std::string userName;
@@ -54,4 +55,5 @@ class Graphics{
     void ChoosePosition();
 };
 
+bool isSallaryOK(int sallary, int age);
 #endif

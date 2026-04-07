@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 using namespace std;
 
 
@@ -92,4 +93,14 @@ void Graphics::ChoosePosition(){
     cout << "1.Worker" << '\n';
     cout << "2.Superwisor" << '\n';
     cout << "3.Boss" << '\n';
+}
+
+bool isSallaryOK(int sallary, int age){
+    if (sallary > 30000 && age < 30 ){
+        cout << "Someone below 30 can't earn above 30 000kr!\n";
+        return false;
+    }
+    else {
+        return true;
+    }
 }

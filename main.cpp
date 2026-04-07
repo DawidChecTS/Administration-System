@@ -52,13 +52,14 @@ int main(){
                 case 3: pos = Position::Boss; break;
             }
 
-            cout << "Enter Staff's  monthly salary: ";
+            cout << "Enter Staff's monthly salary: ";
             cin >> staffMonthlySalary;
 
-            staff.emplace_back(staffName, staffAge, staffEmail,
-                pos,staffMonthlySalary);
-
-            continue;
+            if (isSallaryOK(staffMonthlySalary, staffAge)) {
+                staff.emplace_back(staffName, staffAge, staffEmail,
+                pos, staffMonthlySalary);
+            }      
+            else{continue;}
         }
         else if (userMenuChoice == 2){
             graphics.ListStaffView();
@@ -76,9 +77,10 @@ int main(){
                 }
                 else if (userListStaffChoice == 2){
                     staff[0].PrintStaff();
+                    continue;
                 }
                 else if (userListStaffChoice == 3){
-
+                    continue;
                 }
                 else{
                 cout << "Error! The option you choose was not lsited in the menu!";
