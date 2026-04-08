@@ -57,4 +57,7 @@ class Graphics{
 
 bool isSallaryOK(int sallary, int age);
 bool canBeSupervisor(int age, Position p);
+bool checkEmail(std::string email);
+void printErrorAndExit();
+void infoExit();
 #endif

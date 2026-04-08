@@ -113,3 +113,34 @@ bool canBeSupervisor(int age, Position p){
         return true;
     }
 }
+
+void printErrorAndExit(){
+    cout << "Error! The option you choose was not lsited in the menu! \n";
+}
+
+void infoExit(){
+    cout << "You are exiting the system! \n";
+}
+
+bool checkEmail(std::string email){
+    std::string::size_type atPos = email.find('@');
+    std::string::size_type dotPos = email.find('.', atPos);
+    
+    if (atPos == string::npos) 
+    cout << "Not valid email\n";
+    return false;
+    if (dotPos == string::npos)
+    cout << "Not valid email\n";
+    return false;
+    if (atPos == 0)
+    cout << "Not valid email\n";
+    return false;
+    if (dotPos < atPos +2) 
+    cout << "Not valid email\n";
+    return false;
+    if (dotPos == email.length() - 1)
+    cout << "Not valid email\n";
+    return false;
+    
+    return true;
+}

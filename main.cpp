@@ -33,7 +33,8 @@ int main(){
     while (true){
         graphics.Menu();
         cin >> userMenuChoice;
-        if (userMenuChoice == 1){
+        if (userMenuChoice == 1)
+        {
             graphics.AddStaffView();
             cout << "Enter Staff's name: ";
             cin >> staffName;
@@ -56,11 +57,14 @@ int main(){
             cout << "Enter Staff's monthly salary: ";
             cin >> staffMonthlySalary;
 
-            if (isSallaryOK(staffMonthlySalary, staffAge) && canBeSupervisor(staffAge, pos)) {
+            if (isSallaryOK(staffMonthlySalary, staffAge) 
+            && canBeSupervisor(staffAge, pos) && checkEmail(staffEmail)) 
+            {
                 staff.emplace_back(staffName, staffAge, staffEmail,
                 pos, staffMonthlySalary);
             }      
             else{continue;}
+
         }
         else if (userMenuChoice == 2){
             graphics.ListStaffView();
@@ -84,7 +88,7 @@ int main(){
                     continue;
                 }
                 else{
-                cout << "Error! The option you choose was not lsited in the menu!";
+                printErrorAndExit();
                 return false;
         }
             }
@@ -95,7 +99,7 @@ int main(){
             continue;
         }
         else if (userMenuChoice == 4){
-            cout << "You are exiting the system!";
+            printErrorAndExit();
             return false;
         }
         else{
